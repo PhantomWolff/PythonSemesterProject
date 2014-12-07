@@ -2,18 +2,18 @@ class Character(object):
 
 #Character constructor    
     def __init__ (self, statLine):
-        self.__name = statLine[0]
-        self.__ID = statLine[1]
+        self.__ID = statLine[0]
+        self.__name = statLine[1]
         self.__level = statLine[2]
         self.__health = statLine[3]
         self.__totalHealth = statLine[3]
         self.__strength = statLine[4]
 
 #Methods to receive specific class information
-    def getName (self):
-        return self.__name
     def getID (self):
         return self.__ID
+    def getName (self):
+        return self.__name
     def getLevel (self):
         return self.__level
     def getHealth (self):
