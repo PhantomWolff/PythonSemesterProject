@@ -32,13 +32,13 @@ def create_enemy_dictionary (allStatList: list) -> dict:
     for line in allStatList:
         enemyName = line[0]
         enemyID = line[1]
-        enemyDict[(i)] = Character(line)
+        enemyDict["enemy" + str(i)] = Character(line)
         i += 1
     return enemyDict
 #MAIN
 allStatList = getStatList()
 enemyDict = create_enemy_dictionary(allStatList)
-print(enemyDict["1"].getLevel())
+print(enemyDict["enemy1"].getLevel())
 #allStatList[i][0] = str("enemy" + str(i))
 #apple = str("enemy" + str(i))
 #print(apple)
