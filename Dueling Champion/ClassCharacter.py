@@ -20,6 +20,8 @@ class Hero(object):
         return self.__health
     def getTotalHealth (self):
         return self.__totalHealth
+    def getHealthFraction (self):
+        return self.__health + "/" + self.__totalHealth    
     def getStrength (self):
         return self.__strength
     def getHeroStats (self):
@@ -78,6 +80,8 @@ class Enemy(object):
         return self.__health
     def getTotalHealth (self):
         return self.__totalHealth
+    def getHealthFraction (self):
+        return self.__health + "/" + self.__totalHealth
     def getStrength (self):
         return self.__strength
     def getExpValue (self):

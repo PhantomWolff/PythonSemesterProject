@@ -33,7 +33,8 @@ def create_enemies (allStatList: list) -> list:
         i += 1
     return enemyList
 
-#
+#gets the list of stats and creates each enemy inside of a dictionary. 
+#To use the enemy0 object, type >>> enemyDict["enemy0"].method()
 def create_enemy_dictionary () -> dict:
     #Complete
     allStatList = getStatList()
@@ -50,9 +51,12 @@ def create_enemy_dictionary () -> dict:
 def create_hero () -> object:
     #Incomplete but working
     heroName = input("Hello adventurer! What is your name? ")
-    heroLevel = input("What is your starting level? ")
-    heroTotalHealth = input("What is your starting health? ")
-    heroStrength = input("What is your starting strength? ")
+    #heroLevel = input("What is your starting level? ")
+    heroLevel = "1"
+    #heroTotalHealth = input("What is your starting health? ")
+    heroTotalHealth = "10"
+    #heroStrength = input("What is your starting strength? ")
+    heroStrength = "3"
     heroInitList = [heroName, heroLevel, heroTotalHealth, heroStrength]
     hero = Hero(heroInitList)
     return hero
@@ -68,22 +72,31 @@ def displayAll (enemy):
     enemy.displayExpValue()
     enemy.displayGoldValue()
 
-def start_battle (hero, enemy):
+def start_battle (hero, opponent):
     #Incomplete
     #Battle Initiation
-    pass
-
-
-##################MAIN#######################
+    print("*" * 38)
+    print("|{:<8s}{:>8s} | {:<8s}{:>8s} |".format("Name:", hero.getName(), "Name:", opponent.getName()))
+    print("|{:<8s}{:>8s} | {:<8s}{:>8s} |".format("Level:", hero.getLevel(), "Level:", opponent.getLevel()))
+    print("|{:<8s}{:>8s} | {:<8s}{:>8s} |".format("Health:", hero.getHealthFraction(), "Health:", opponent.getHealthFraction()))
     
+    print("*" * 38)
+    print("\n")
+
+##################MAIN#####################
+
+#Instantiate characters    
 enemyDict = create_enemy_dictionary()
 hero = create_hero()
+print("\n\n")
+
 print(hero.getHeroStats())
-hero.damage(3)
-print(hero.getHealth())
 
-print(enemyDict["enemy0"].getName() + " will be your first enemy.")
+enemyNumber = 0
 
-print(enemyDict["enemy0"].getEnemyStats())
-    
-displayAll(enemyDict["enemy0"])
+#
+opponent = enemyDict["enemy" + str(enemyNumber)]
+
+print(opponent.getName() + " will be your first enemy.")
+input()
+start_battle(hero, opponent)
