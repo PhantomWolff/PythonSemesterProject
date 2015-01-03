@@ -14,7 +14,7 @@
 ##I want to assign enemy1 to bowser and enemy2 to bowser junior WITHOUT typing the values 1 or 2
 #list1 = ["enemy" + str(1), "enemy2"]
 #print (list1)
-
+import random
 class Test(object):
     def __init__ (self, name = "", age = 0, color = ""):
         self.__name = name
@@ -32,3 +32,11 @@ class Test(object):
     
     def __str__ (self):
         return (str(self.__name) + str(self.__age) + str(self.__color))
+    
+for i in range(5):
+    print (random.choice(["apple", "banana", "chocolate"]))
+    print(round(4.4))
+    print(round(4.8))
+    print(round(3/4))
+    print(round(3/7))
+    print(round(111/110))
