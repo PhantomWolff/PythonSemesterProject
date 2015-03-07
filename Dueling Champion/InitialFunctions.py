@@ -217,21 +217,19 @@ def opponent_attack(hero, opponent, opponentMove):
             print("You dealt " + str(damage) + " damage to " + opponent.getName())
 
 #What will the opponent do if the hero blocks
-def opponent_block(hero, opponent, opponentMove):
-    if opponentMove == "attack":
+def opponent_attack(hero, opponent, opponentMove):      
+    if opponentMove == "attack":                        #Good
+        #print(2)
         print(opponent.getName() + " attacked")
-        damage = hero.getStrength()
-        opponent.damage(damage)
-        if opponent.getHealth() < 1:
-            pass
+        damage = opponent.getStrength()
+        hero.damage(damage)             #hero is damaged
+        print(opponent.getName() + " dealt " + str(damage) + " damage to you.")
+        if hero.getHealth() < 1:
+            print("hero has been defeated")
         else:
-            damage = opponent.getStrength()
-            hero.damage(damage)
-            if hero.getHealth() < 1:
-                print("hero has been defeated")
-            else:
-                pass
+            pass
             
+
     if opponentMove == "block":
         print(opponent.getName() + " blocked")
         damage = round(hero.getStrength() * 1/6)
